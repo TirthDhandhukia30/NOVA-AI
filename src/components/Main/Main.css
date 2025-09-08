@@ -1,0 +1,177 @@
+.main {
+    flex: 1;
+    min-height: 100vh;
+    padding-bottom: 15vh;
+    position: relative;
+    background-color: #121212;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.main .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 28px;
+    padding: 20px;
+    color: #c4c7c5;
+}
+.main .nav img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.main-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.greet {
+    margin: 50px 0px;
+    font-size: 46px;
+    color: #e0e0e0;
+    font-weight: 500;
+    padding: 20px;
+}
+
+.greet span {
+    background: linear-gradient(30deg, #00ffd5, #ff3c79, #ff9f1c, #8e44ad);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 5s ease infinite;
+}
+
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.chat-list {
+  flex: 1;                /* take remaining space */
+  overflow-y: auto;        /* make it scrollable */
+  padding: 10px;
+  max-height: 60vh;        /* adjust based on layout */
+}
+
+.chat-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+
+.main-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 20px;
+    margin: auto;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #1e1e1e;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 18px;
+    color: #e0e0e0;
+}
+
+.search-box div {
+    display: flex;
+    gap: 15px;
+}
+
+.search-box img {
+    width: 24px;
+    cursor: pointer;
+}
+
+.bottom-info {
+    font-size: 13px;
+    margin: 15px auto;
+    text-align: center;
+    font-weight: 300;
+    color: #b0b0b0;
+}
+
+.result {
+    padding: 0% 5%;
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+
+.result::-webkit-scrollbar {
+    display: none;
+}
+
+.result-title {
+    margin: 40px 0px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #e0e0e0;
+}
+
+.result img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.result-data {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+
+.loader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.animated-bg {
+    border-radius: 4px;
+    border: none;
+    animation: loader 3s infinite linear;
+    background-color: #2a2a2a;
+    background: linear-gradient(to right, #4b4b4b, #6a6a6a, #4b4b4b);
+    background-size: 800px 50px;
+    height: 20px;
+}
+
+@keyframes loader {
+    0% { background-position: -800px 0; }
+    100% { background-position: 800px 0; }
+}
+
+.result-data p {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #c4c7c5;
+}
+
+@media (max-width:600px) {
+    .main-bottom input { flex: none; width: 140px; }
+    .main-bottom img { width: 20px; }
+    .search-box { padding: 5px 10px; }
+    .search-box div { gap: 5px; }
+}
